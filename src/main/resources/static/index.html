@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth2+Angular</title>
+
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="/webjars/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript">
+        angular.module("app", []).controller("home", function ($http, $location) {
+            var self = this;
+
+            $http.get("/me").success(function (data) {
+                self.user = data.details;
+                self.authenticated = true;
+            }).error(function () {
+                self.user = "";
+                self.authenticated = false;
+            });
+
+            self.logout = function () {
+                $http.post('/logout', {}).success(function () {
+                    self.authenticated = false;
+                    $location.path("/");
+                }).error(function (data) {
+                    self.authenticated = false;
+                });
+            };
+
+        });
+    </script>
+
+</head>
+
+<body ng-app="app" ng-controller="home as home">
+
+<div class="container" style="text-align: center; max-width: 25em;">
+
+    <h1>Springular</h1>
+
+    <div ng-show="!home.authenticated">
+        <p class="text-warning">Please Login</p>
+        <a class="btn btn-block btn-primary" href="/githubLogin">Login with Github</a>
+    </div>
+
+    <div ng-show="home.authenticated">
+
+        <img ng-src="{{home.user.avatarUrl}}" width="150" height="150" class="img-circle"/>
+
+        <p class="text-success">
+            Welcome <span ng-bind="home.user.name"></span>
+        </p>
+
+        <div>
+            <button ng-click="home.logout()" class="btn btn-primary btn-block">Logout</button>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
