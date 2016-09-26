@@ -48,7 +48,7 @@ public class GithubUser {
         };
 
         token.setDetails(GithubUser.this);
-        token.isAuthenticated();
+        token.setAuthenticated(true);
         return token;
     }
 

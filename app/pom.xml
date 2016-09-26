@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>singasug</groupId>
-    <artifactId>oauth2-ng</artifactId>
+    <artifactId>springular</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>oauth2-ng</name>
+    <name>springular</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -67,6 +67,7 @@
     </dependencies>
 
     <build>
+        <finalName>springular</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
