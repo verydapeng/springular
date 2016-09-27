@@ -10,3 +10,11 @@ Screenshots
 image::https://cloud.githubusercontent.com/assets/2149970/18862144/bcf9273a-84bc-11e6-9150-d21091e6a73b.png[]
 image::https://cloud.githubusercontent.com/assets/2149970/18862218/33474a20-84bd-11e6-8116-b85eedf1d5e2.png[]
 image::https://cloud.githubusercontent.com/assets/2149970/18862243/6834ba74-84bd-11e6-9d17-9c8bd9a80cf4.png[]
+
+== Agenda
+
+1. link:doc/setup.adoc[App Setup]
+1. link:doc/callback.adoc[Implement Github callback]
+1. link:doc/user.adoc[Access User's Github Profile]
+1. link:doc/spring-security.adoc[Use Spring Security to Protect the Application]
+1. link:doc/finish-ui.adoc[Finish the UI]
