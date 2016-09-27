@@ -6,4 +6,4 @@
 - artifact: springular
 - dependencies: web, devtools
 
-images::setup.png[]
+image::setup.png[]
