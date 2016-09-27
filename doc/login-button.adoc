@@ -1,0 +1,35 @@
+= Login Button
+
+Now let's implement the `Login with Github` button
+
+Reference https://developer.github.com/v3/oauth/#1-redirect-users-to-request-github-access
+
+The first step, we need to redirect user's browser to https://github.com/login/oauth/authorize
+
+1. edit `SpringularApplication` class
++
+[source,java]
+----
+@SpringBootApplication
+@Controller // <-- add this
+public class SpringularApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringularApplication.class, args);
+	}
+
+	// add following
+	@GetMapping("/githubLogin")
+	String githubLogin() {
+		return "redirect:https://github.com/login/oauth/authorize?" +
+				"client_id=13e67f9acf45a46a6567";
+	}
+}
+----
+1. Now rerun the application (You may want to use the DevTools' restart feature to do this)
+1. Click the `Login with Github`, you can see you have been redirected to github oauth page
+1. Continue with `Authorize application` button, and this application is configured that
+it will redirect your browser back to http://localhost:8080/callback
+1. Since we haven't implemented the callback, expecting to see an error page
++
+image::login-button-callback.png[]
