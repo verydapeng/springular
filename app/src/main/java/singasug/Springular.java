@@ -57,7 +57,7 @@ public class Springular {
         GithubTokenResponse response = restTemplate.postForEntity(githubConfig.getAccessTokenUri(code), null, GithubTokenResponse.class).getBody();
         logger.info("tokenResponse: {}", response);
         GithubUser user = restTemplate.getForEntity(githubConfig.getUserUri(response.getAccessToken()), GithubUser.class).getBody();
-        logger.info("user: {}");
+        logger.info("user: {}", user);
         SecurityContextHolder.getContext().setAuthentication(user.toAuthentication());
 
         return "redirect:/";
