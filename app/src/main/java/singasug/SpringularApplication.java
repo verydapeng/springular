@@ -89,7 +89,7 @@ public class SpringularApplication {
                         .mvcMatchers("/me").authenticated()
                         .mvcMatchers("/callback").permitAll()
 
-                        .and().logout().permitAll()
+                        .and().logout().logoutSuccessHandler((req, resp, auth) -> {}).permitAll()
                         .and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
             }
         };
