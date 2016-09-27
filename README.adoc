@@ -14,6 +14,7 @@ image::https://cloud.githubusercontent.com/assets/2149970/18862243/6834ba74-84bd
 == Agenda
 
 1. link:doc/setup.adoc[App Setup]
+1. link:doc/login-button.adoc[Implement Login Button]
 1. link:doc/callback.adoc[Implement Github callback]
 1. link:doc/user.adoc[Access User's Github Profile]
 1. link:doc/spring-security.adoc[Use Spring Security to Protect the Application]
