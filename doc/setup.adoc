@@ -1,0 +1,9 @@
+= Project Setup
+
+1. Go to https://start.spring.io to generate your project skeleton
+
+- group: singasug
+- artifact: springular
+- dependencies: web, devtools
+
+images::setup.png[]

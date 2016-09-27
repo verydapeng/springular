@@ -1,0 +1,12 @@
+= Springular
+
+Workshop for https://www.meetup.com/singasug/events/234315161/
+
+The demo app is running at https://springular.cfapps.io/
+
+Screenshots
+
+
+image::https://cloud.githubusercontent.com/assets/2149970/18862144/bcf9273a-84bc-11e6-9150-d21091e6a73b.png[]
+image::https://cloud.githubusercontent.com/assets/2149970/18862218/33474a20-84bd-11e6-8116-b85eedf1d5e2.png[]
+image::https://cloud.githubusercontent.com/assets/2149970/18862243/6834ba74-84bd-11e6-9d17-9c8bd9a80cf4.png[]
