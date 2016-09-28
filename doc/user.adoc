@@ -49,38 +49,39 @@ covering the `name`, `username` and `avatar_url` fields here
 ----
 class GithubUser {
 
-	private String username;
-	private String name;
-	private String avatarUrl;
+  private String username;
+  private String name;
+  private String avatarUrl;
 
-	@JsonCreator
-	public GithubUser(@JsonProperty("login") String username,
-					  @JsonProperty("name") String name,
-					  @JsonProperty("avatar_url") String avatarUrl) {
-		this.username = username;
-		this.name = name;
-		this.avatarUrl = avatarUrl;
-	}
+  @JsonCreator
+  public GithubUser(
+      @JsonProperty("login") String username,
+      @JsonProperty("name") String name,
+      @JsonProperty("avatar_url") String avatarUrl) {
+    this.username = username;
+    this.name = name;
+    this.avatarUrl = avatarUrl;
+  }
 
-	public String getAvatarUrl() {
-		return avatarUrl;
-	}
+  public String getAvatarUrl() {
+    return avatarUrl;
+  }
 
-	public String getUsername() {
-		return username;
-	}
+  public String getUsername() {
+    return username;
+  }
 
-	public String getName() {
-		return name;
-	}
+  public String getName() {
+    return name;
+  }
 
-	@Override
-	public String toString() {
-		return "GithubUser{" +
-				"username='" + username + '\'' +
-				", name='" + name + '\'' +
-				'}';
-	}
+  @Override
+  public String toString() {
+    return "GithubUser{" +
+        "username='" + username + '\'' +
+        ", name='" + name + '\'' +
+        '}';
+  }
 }
 ----
 
@@ -93,7 +94,8 @@ class GithubUser {
 @ResponseBody
 Object callback(@RequestParam String code) {
 
-  GithubTokenResponse response = restTemplate.postForEntity("https://github.com/login/oauth/access_token?" +
+  GithubTokenResponse response = restTemplate.postForEntity(
+      "https://github.com/login/oauth/access_token?" +
       "client_id=13e67f9acf45a46a6567&" +
       "client_secret=dc51ddd68a03ff435a497b3023b44a37b55fbc1d&" +
       "code=" + code, null, GithubTokenResponse.class).getBody();
@@ -141,16 +143,16 @@ class GithubConfig {
         return userUri.expand(accessToken);
     }
 
-    public void setUserUri(String userUri) {
-        this.userUri = new UriTemplate(userUri);
+    public void setUserUri(UriTemplate userUri) {
+        this.userUri = userUri;
+    }
+
+    public void setAccessTokenUri(UriTemplate accessTokenUri) {
+        this.accessTokenUri = accessTokenUri;
     }
 
     public URI getAccessTokenUri(String code) {
         return accessTokenUri.expand(code);
-    }
-
-    public void setAccessTokenUri(String accessTokenUri) {
-        this.accessTokenUri = new UriTemplate(accessTokenUri);
     }
 
     public String getAuthoriseUri() {

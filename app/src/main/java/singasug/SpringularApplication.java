@@ -165,16 +165,16 @@ class GithubConfig {
         return userUri.expand(accessToken);
     }
 
-    public void setUserUri(String userUri) {
-        this.userUri = new UriTemplate(userUri);
+    public void setUserUri(UriTemplate userUri) {
+        this.userUri = userUri;
+    }
+
+    public void setAccessTokenUri(UriTemplate accessTokenUri) {
+        this.accessTokenUri = accessTokenUri;
     }
 
     public URI getAccessTokenUri(String code) {
         return accessTokenUri.expand(code);
-    }
-
-    public void setAccessTokenUri(String accessTokenUri) {
-        this.accessTokenUri = new UriTemplate(accessTokenUri);
     }
 
     public String getAuthoriseUri() {
