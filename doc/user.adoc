@@ -42,7 +42,7 @@ https://api.github.com/user?access_token=PUT_YOUR_TOKEN_HERE
   "updated_at": "2016-09-22T08:17:00Z"
 }
 ----
-1. Let's model the user, for the sake a brevity, we are only
+1. Let's model the user, for the sake of brevity, we are only
 covering the `name`, `username` and `avatar_url` fields here
 +
 [source,java]
