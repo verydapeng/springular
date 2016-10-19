@@ -19,3 +19,7 @@ image::https://cloud.githubusercontent.com/assets/2149970/18862243/6834ba74-84bd
 1. link:doc/user.adoc[Access User's Github Profile]
 1. link:doc/spring-security.adoc[Use Spring Security to Protect the Application]
 1. link:doc/finish-ui.adoc[Finish the UI]
+
+== (Optional) Simplification using Spring Security OAuth2
+
+https://gist.github.com/verydapeng/651809d157aad4bc685aa60b417ffeaa
